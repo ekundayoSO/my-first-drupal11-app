@@ -1,0 +1,8 @@
+book_list.content:
+  path: '/book-list'
+  defaults:
+   _controller: '\Drupal\book_list\Controller\BookListController::content'
+   _title: 'Book List'
+  requirements:
+   _permission: 'access content'
+

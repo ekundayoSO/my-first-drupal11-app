@@ -1,0 +1,7 @@
+name: 'Book List'
+type: module
+description: 'A Simple Book App'
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+package: Custom
+dependencies:
+  - drupal:node
