@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <header class="header">
+      {{ page.header }}
+      <nav>
+        <div class="logo">
+          <h2>Ekundayo Sulaimon</h2>
+        </div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#conatct">Contact</a></li>
+        </ul>
+      </nav>
+      <br />
+      <div class="heading">
+        <h1>Welcome</h1>
+      </div>
+      <nav class="menu">
+        {{ page.menu }}
+      </nav>
+    </header>
+    <main class="main">
+      <div class="content">
+        {{ page.content }}
+        {{first_module_variable}}
+      </div>
+      {% if page.sidebar %}
+      <div class="sidebar"></div>
+      {% endif %}
+    </main>
+
+    <footer class="footer">
+      {{ page.footer }}
+      <p><small>Copyright&copy; 2024</small></p>
+    </footer>
+      <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>

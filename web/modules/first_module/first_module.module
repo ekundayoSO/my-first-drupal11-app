@@ -1,0 +1,45 @@
+<?php 
+
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+* Implement hook_form_alter().
+*/
+
+function first_module_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    if ($form_id = 'user_login_form') {
+        // Changing login Username title
+        $form['#title'] = t('Login with XYZ Company info');
+        $form['name']['#title'] = t('XYZ Inc Username');
+        $form['name']['#attributes']['placeholder'] = t('XYZ Inc Username');
+
+        // Changing login Password title
+        $form['pass']['#title'] = t('XYZ Inc Password');
+        $form['pass']['#attributes']['placeholder'] = t('XYZ Inc Password');
+    }
+}
+
+/**
+ * Implement hook_preprocess_page().
+ */
+function first_module_preprocess_page(&$variable) {
+    $variable['first_module_variable'] = t('My first D11 website');
+}
+
+/**
+ * Implement hook_preprocess_page().
+ */
+
+ function first_module_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        case 'help.page.first_module':
+            $output = '';
+            $output .= '<h3>' .t('About') .'</h3>';
+            $output .= '<p>' . t('This is a first custom module help.') . '</p>';
+            return $output;
+
+            default:
+
+    }
+ }
